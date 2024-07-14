@@ -1,0 +1,16 @@
+<!-- <div *ngIf="getAuthStatus(); else loginForm">
+
+    <h1>Welcome</h1>
+    <button (click)="logout()">LogOut</button>
+
+</div>
+<ng-template #loginForm>
+    <form (ngSubmit)="login()">
+        <input type="text" [(ngModel)]="userLogin" [ngModelOptions]="{standalone: true}" placeholder="Login">
+        <input type="password" [(ngModel)]="userPassword" [ngModelOptions]="{standalone: true}" placeholder="Password">
+        <button type="submit">Log In</button>
+    </form>
+</ng-template> -->
+<p>Some Facts about cat</p>
+<p *ngIf="facts">{{ facts.fact }}</p>
+<button (click)="getFact()">Click</button>

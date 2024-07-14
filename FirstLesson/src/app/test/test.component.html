@@ -1,0 +1,41 @@
+<p>If</p>
+<hr>
+<div *ngIf="isVisibility">
+
+    <p>Pipe</p>
+    <p>Date: {{Today | date:"longTime"}}</p>
+    <p>UpperText: {{UpperText | uppercase}}</p>
+    <p>LowerText: {{LowerText | lowercase}}</p>
+    <p>Price: {{Price | currency:'USD':'symbol':'1.2-2':'en-US'}}</p>
+    <p>Price: {{Price | currency:"USD":"symbol"}}</p>
+    <p>Price: {{Price | currency:"USD":"code"}}</p>
+    <p>Price: {{Price | currency:"UAH":"symbol-narrow"}}</p>
+    <p>TitleText: {{UpperText | titlecase}}</p>
+
+    <hr>
+    <p>For</p>
+    <ul>
+        <li *ngFor="let item of SomeText">{{item}}</li>
+    </ul>
+    <hr>
+    <p>Switch</p>
+    <div [ngSwitch]="RandomNumber">
+        <p *ngSwitchCase="1">number 1</p>
+        <p *ngSwitchCase="2">number 2</p>
+        <p *ngSwitchCase="3">number 3</p>
+        <p *ngSwitchCase="4">number 4</p>
+        <p *ngSwitchCase="5">number 5</p>
+    </div>
+</div>
+<hr>
+<div>
+    <div [ngClass]="{'active': IsActive, 'disable': IsDisable}">First div</div>
+    <div [ngClass]="ClassObject"></div>
+    <div [ngClass]="ClassArray"></div>
+</div>
+<hr>
+<div>
+    <div [ngStyle]="{'color': color, 'fontSize': fontSize + 'px'}">Style div</div>
+    <div></div>
+    <div></div>
+</div>

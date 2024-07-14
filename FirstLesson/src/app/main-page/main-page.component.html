@@ -1,9 +1,11 @@
-<H1>My resume</H1>
 <div>
-    <h2>Full name:{{PIB}}</h2>
+    <!-- <img src="assets/{{Photo}}" alt=""> -->
+    <h2>Full name:{{PIB | titlecase}}</h2>
     <h3>Phone:{{Phone}}</h3>
-    <h4>Email:{{Email}}$64 gmail.com</h4>
-    <h5>City:{{City}}</h5>
+    <h3>Email:{{Email | lowercase}}</h3>
+    <h3>City:{{City | uppercase}}</h3>
+    <h3>My previous sallary: {{Sallary | currency: "USD"}}</h3>
+    <h3>Birth Date: {{BirthDate | date:"longDate"}}</h3>
     <!-- <button (click)="handleClickRight()">right</button>
     <img src="assets/{{PhotoUrl}}" alt="">
     <button (click)="handleClickLeft()">left</button> -->
