@@ -1,0 +1,25 @@
+<div class="gallery">
+    <div *ngFor="let painting of paintings" class="thumbnail" (click)="selectPainting(painting)">
+      <img [src]="painting.thumbnailUrl" [alt]="painting.title">
+      <p>{{ painting.title }}</p>
+    </div>
+  </div>
+  
+  <div *ngIf="selectedPainting" class="detail">
+    <button (click)="closeDetail()">Close</button>
+    <img [src]="selectedPainting.imageUrl" [alt]="selectedPainting.title">
+    <h2>{{ selectedPainting.title }}</h2>
+    <p><strong>Year:</strong> {{ selectedPainting.year }}</p>
+    <p><strong>Artist:</strong> {{ selectedPainting.artist }}</p>
+    <p><strong>Dimensions:</strong> {{ selectedPainting.dimensions }}</p>
+    <p><strong>Location:</strong> {{ selectedPainting.location }}</p>
+  
+    <div class="related-gallery">
+      <h3>Other works by {{ selectedPainting.artist }}:</h3>
+      <div *ngFor="let related of selectedPainting.relatedPaintings" class="thumbnail" (click)="selectRelatedPainting(related)">
+        <img [src]="related.thumbnailUrl" [alt]="related.title">
+        <p>{{ related.title }}</p>
+      </div>
+    </div>
+  </div>
+  
