@@ -1,0 +1,47 @@
+<!-- <div *ngIf="getAuthStatus(); else loginForm">
+
+    <h1>Welcome</h1>
+    <button (click)="logout()">LogOut</button>
+
+</div>
+<ng-template #loginForm>
+    <form (ngSubmit)="login()">
+        <input type="text" [(ngModel)]="userLogin" [ngModelOptions]="{standalone: true}" placeholder="Login">
+        <input type="password" [(ngModel)]="userPassword" [ngModelOptions]="{standalone: true}" placeholder="Password">
+        <button type="submit">Log In</button>
+    </form>
+</ng-template> -->
+<!-- <p>Some Facts about cat</p>
+<p *ngIf="films">{{ films }}</p>
+<button (click)="getFilm()">Click</button> -->
+
+<div>
+  <h1>Movie Search</h1>
+  <input [(ngModel)]="title" placeholder="Enter movie title" />
+  <input [(ngModel)]="year" placeholder="Enter release year" />
+  <div>
+    <label>
+      <input type="radio" [(ngModel)]="plot" value="short" /> Short Plot
+    </label>
+    <label>
+      <input type="radio" [(ngModel)]="plot" value="full" /> Full Plot
+    </label>
+  </div>
+  <button (click)="searchMovie()">Search</button>
+</div>
+
+<div *ngIf="movie">
+  <h2>{{ movie.Title }}</h2>
+  <p><strong>Year:</strong> {{ movie.Year }}</p>
+  <p><strong>Rating:</strong> {{ movie.imdbRating }}</p>
+  <p><strong>Duration:</strong> {{ movie.Runtime }}</p>
+  <p><strong>Director:</strong> {{ movie.Director }}</p>
+  <p><strong>Cast:</strong> {{ movie.Actors }}</p>
+  <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+</div>
+
+<div *ngIf="error">
+  <p>{{ error }}</p>
+</div>
+
+<button (click)="changeData()">flash</button>
