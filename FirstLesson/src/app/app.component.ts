@@ -10,6 +10,7 @@ import { SenderComponent } from "./sender/sender.component";
 import { Sender1Component } from "./sender1/sender1.component";
 import { DataServiceService } from '../Service/data-service.service';
 import { OmdbService } from '../Service/ombd.service';
+import { TransportComponent } from "./transport/transport.component";
 
 
 @Component({
@@ -17,7 +18,7 @@ import { OmdbService } from '../Service/ombd.service';
 	standalone: true,
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.css',
-	imports: [RouterOutlet, MainPageComponent, ResumeComponent, LinksComponent, TestComponent, CommonModule, ServiceParaComponent, SenderComponent, Sender1Component]
+	imports: [RouterOutlet, MainPageComponent, ResumeComponent, LinksComponent, TestComponent, CommonModule, ServiceParaComponent, SenderComponent, Sender1Component, TransportComponent]
 })
 export class AppComponent {
 	// title = 'FirstLesson';

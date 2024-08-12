@@ -1,0 +1,30 @@
+<div>
+    <button (click)="showCar()">Найбільший автомобіль</button>
+    <button (click)="showAirplane()">Найбільший літак</button>
+    <button (click)="showShip()">Найбільший корабель</button>
+  </div>
+  
+  <div *ngIf="selectedVehicle === 'car'">
+    <h2>{{ car.name }}</h2>
+    <p>{{ car.description }}</p>
+    <p>Довжина: {{ car.size }} м</p>
+    <p>Вага: {{ car.weight | number }} кг</p>
+    <p>Країна виробництва: {{ car.country }}</p>
+  </div>
+  
+  <div *ngIf="selectedVehicle === 'airplane'">
+    <h2>{{ airplane.name }}</h2>
+    <p>{{ airplane.description }}</p>
+    <p>Довжина: {{ airplane.size }} м</p>
+    <p>Максимальна злітна вага: {{ airplane.weight | number }} кг</p>
+    <p>Країна виробництва: {{ airplane.country }}</p>
+  </div>
+  
+  <div *ngIf="selectedVehicle === 'ship'">
+    <h2>{{ ship.name }}</h2>
+    <p>{{ ship.description }}</p>
+    <p>Довжина: {{ ship.size }} м</p>
+    <p>Вага: {{ ship.weight | number }} тонн</p>
+    <p>Країна виробництва: {{ ship.country }}</p>
+  </div>
+  
