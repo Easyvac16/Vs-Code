@@ -1,20 +1,31 @@
 <div class="game">
-    <h1>Хрестики-нулики</h1>
-    <div *ngIf="winner" class="winner">
-      Переможець: {{ winner }}
-    </div>
-    <div *ngIf="draw" class="draw">
-      Гра завершилася внічию!
-    </div>
-    <div class="board">
-      <div *ngFor="let row of board; let rowIndex = index" class="row">
-        <div *ngFor="let cell of row; let colIndex = index" 
-             class="cell" 
-             (click)="makeMove(rowIndex, colIndex)">
-          {{ cell }}
-        </div>
+  <h1>Гра Хрестики-Нулики</h1>
+
+  <div class="mode-selection">
+    <button (click)="selectMode(false)">Гравець проти Гравця</button>
+    <button (click)="selectMode(true)">Гравець проти Бота</button>
+  </div>
+
+  <p *ngIf="isBotGame; else other_content">Гравець проти бота</p>
+
+  <ng-template #other_content>
+    Гравець проти Гравця
+  </ng-template>
+
+
+  <div class="board">
+    <div *ngFor="let row of board; let rowIndex = index">
+      <div *ngFor="let cell of row; let colIndex = index" class="cell" [class.filled]="cell"
+        (click)="makeMove(rowIndex, colIndex)">
+        {{ cell }}
       </div>
     </div>
-    <button (click)="newGame()">Нова гра</button>
   </div>
-  
+
+  <div class="status">
+    <p *ngIf="winner">Переможець: {{ winner }}</p>
+    <p *ngIf="draw && !winner">Нічия!</p>
+  </div>
+
+  <button (click)="newGame()">Нова Гра</button>
+</div>
