@@ -1,0 +1,8 @@
+.photo-container{
+    display: flex;
+    flex-direction: row;
+}
+.photo-container img
+{
+    width: 33%;
+}
