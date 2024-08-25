@@ -1,0 +1,64 @@
+.riddle-container {
+    background-color: gray;
+    padding: 25px;
+    width: 20%;
+}
+
+h3 {
+    margin: 0;
+    padding-bottom: 15px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: 1px solid black;
+}
+
+button {
+    margin-top: 15px;
+}
+
+.form-inline {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.form-inline .form-group {
+    --modifier: calc(30ch - 100%);
+    flex-basis: calc(var(--modifier)* 999);
+    flex-grow: 1;
+    grid-template-areas: "group";
+}
+
+.form-group {
+    display: grid;
+    width: min(100%, 40ch);
+    grid-gap: .5em;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+.form-group input {
+    min-height: 35px;
+}
+
+.form-group input,
+.form-group textarea {
+    --outline-color: var(--color-primary);
+    background-color: var(--color-background-alt);
+    border: 2px solid;
+    border-radius: 4px;
+    color: var(--color-on-background);
+    font: inherit;
+    padding: 0 .5em;
+    width: 100%;
+}
