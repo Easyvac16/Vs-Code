@@ -19,7 +19,7 @@ export default function Riddle(props) {
 
     function checkAns() {
         if (!isSubmitted) {
-            setIsSubmitted(true);
+
             props.onAnswerSubmitted();
 
             if (inputValue.toLowerCase() === props.answer.toLowerCase()) {
@@ -35,7 +35,7 @@ export default function Riddle(props) {
 
     return (
         <div class='riddle-container' >
-            <h3 style={{ borderColor: bgColor }}>{props.riddle}</h3>
+            <h3>{props.riddle}</h3>
             <div class="form-group" >
                 <input required="" type="text" id="answer" name="answer" class="form-field" onChange={handleInputChanges} disabled={isSubmitted} />
             </div>
