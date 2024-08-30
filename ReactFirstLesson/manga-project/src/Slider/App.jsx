@@ -1,18 +1,13 @@
 import React from 'react';
-// Import Swiper React components
+import { Link } from 'react-router-dom'; // Імпорт Link з react-router-dom
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import './styles.css';
-
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function Slider({ mangas }) {
-
 
   function getCoverUrl(manga) {
     const coverArt = manga.relationships?.find(rel => rel.type === 'cover_art');
@@ -41,7 +36,9 @@ export default function Slider({ mangas }) {
       >
         {mangas.map((manga, index) => (
           <SwiperSlide key={index}>
-            <img src={getCoverUrl(manga)} alt={`Cover of ${manga.attributes.title.en || 'Manga'}`} />
+            <Link to={`/manga/${manga.id}`}>
+              <img src={getCoverUrl(manga)} alt={`Cover of ${manga.attributes.title.en || 'Manga'}`} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
